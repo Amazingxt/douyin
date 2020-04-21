@@ -4,27 +4,21 @@
 
 ##### 目录介绍
 
+```html
 /
-
 ​	zhangyue-douyin/
-
 ​		data/	 * 统计数据文件夹
-
 ​		video/	*视频下载文件夹
-
 ​		douyin.py	*爬虫主程序
-
 ​		share-url.txt	*公众号链接
-
 ​		comments-url.txt	*评论视频链接
-
 ​		comment.py	*评论爬虫程序
-
 ​	config.bat	*设置虚拟环境并下载依赖package
-
 ​	requirements.txt	*依赖package
-
 ​	run.bat	*主脚本
+```
+
+
 
 ##### 操作步骤
 
