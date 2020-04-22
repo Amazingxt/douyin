@@ -33,8 +33,7 @@ class DouYinApi:
 
         print(version_1, version_2, ad_version, tel_version, tel_home, channel)
         self.redisQueue = redis.Redis(host='10.0.0.93', port=6379, db=0, decode_responses=True)
-        self.USER_AGENT = f'com.ss.android.ugc.aweme/{version_1} (Linux; U; Android {ad_version}; zh_CN; ' \
-            f'{tel_head} {tel_version}x;Build/N2G47H; Cronet/58.0.2991.0)'
+        self.USER_AGENT = f'com.ss.android.ugc.aweme/{version_1} (Linux; U; Android {ad_version}; zh_CN; {tel_head} {tel_version}x;Build/N2G47H; Cronet/58.0.2991.0)'
 
         self.COMMON_DEVICE_PARAMS = {
             'address_book_access': '1',

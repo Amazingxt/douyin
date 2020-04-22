@@ -7,7 +7,7 @@ except ImportError:
 import requests
 import urllib.request
 import urllib
-from douyinapi8x import DouYinApi as DouYinApi8
+# from douyinapi8x import DouYinApi as DouYinApi8
 # from douyin.douyinapi_5 import DouYinApi as DouYinApi5
 from douyinapi import DouYinApi
 import json
@@ -254,8 +254,8 @@ def get_urls_comments(path):
 
 def write_total_csv():
 
-    urls = get_urls('./zhangyue-douyin/share-url.txt')
-    dataPath = './zhangyue-douyin/data/total_data.csv'
+    urls = get_urls('zhangyue-douyin\\share-url.txt')
+    dataPath = 'zhangyue-douyin\\data\\total_data.csv'
     if os.path.exists(dataPath):
         os.remove(dataPath)
     data = pd.DataFrame(columns=('id', '获赞', '关注', '粉丝', '作品', '喜欢'))
@@ -270,7 +270,7 @@ def write_total_csv():
 
 def download_total_video():
 
-    dataPath = './zhangyue-douyin/video/'
+    dataPath = 'zhangyue-douyin/video/'
     for i, userInfo in enumerate(totalUserInfo):
         # userInfo = getUserAll(url)
         # print(userInfo)
@@ -278,14 +278,14 @@ def download_total_video():
         if not os.path.exists(dataPath+id):
             os.mkdir(dataPath+id)
         path_file_number = glob.glob(
-            pathname=dataPath+id+'/*.mp4')  # 获取当前文件夹下个数
+            pathname=dataPath+id+'\\*.mp4')  # 获取当前文件夹下个数
 
         num = len(userInfo['videos']) - len(path_file_number)
         # print(len(userInfo['videos']))
         for j, videoInfo in enumerate(userInfo['videos'][:num]):
 
             file_name = dataPath + id + \
-                '/{}.mp4'.format(num - j+len(path_file_number))
+                '\\{}.mp4'.format(num - j+len(path_file_number))
             download(videoInfo['addr'], file_name)
             print('视频下载完成：第{}/{}组，第{}/{}个'.format(i+1,
                                                   len(urls), j+1, len(userInfo['videos'][:num])))
@@ -295,7 +295,7 @@ def write_single_csv():
 
     for i, userInfo in enumerate(totalUserInfo):
 
-        dataPath = './zhangyue-douyin/data/' + \
+        dataPath = 'zhangyue-douyin\\data\\' + \
             userInfo['id'] + '.csv'
         if os.path.exists(dataPath):
             os.remove(dataPath)
@@ -320,10 +320,10 @@ def write_single_csv():
 
 def ocr_video():
 
-    dataPath = './zhangyue-douyin/video/'
+    dataPath = 'zhangyue-douyin\\video\\'
     for i, userInfo in enumerate(totalUserInfo):
         
-        filePath = './zhangyue-douyin/data/catch/' + userInfo['id'] + '_caption.pickle'
+        filePath = 'zhangyue-douyin\\data\\catch\\' + userInfo['id'] + '_caption.pickle'
         if os.path.exists(filePath):
 
             with open(filePath, 'rb') as handle:
