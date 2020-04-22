@@ -1,8 +1,8 @@
 # 忽略环境文件夹和视频文件夹
 
 /myprojectenv
-zhangyue-douyin/video/*
-!zhangyue-douyin/video/.gitkeep
+#zhangyue-douyin/video/*
+#!zhangyue-douyin/video/.gitkeep
 /zhangyue-douyin/抖音数据需求.docx
 /zhangyue-douyin/评论的数据需求.docx
 /zhangyue-douyin/提取的短视频书籍样本.xlsx
