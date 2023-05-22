@@ -1,5 +1,5 @@
 beautifulsoup4==4.6.3
-requests==2.23.0
+requests==2.31.0
 jsonschema==2.6.0
 pickleshare==0.7.4
 glob2==0.6
